@@ -24,7 +24,9 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
         animator = GetComponent<Animator>();
+        animator.Play("Base Layer.idle", -1);
     }
     void Update()
     {
@@ -38,6 +40,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            animator.Play("Base Layer.jump", -1);
             velocity.y = Mathf.Sqrt(jumpHeight * -1 * gravity);
         }
         //gravity
@@ -50,12 +53,19 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (direction.magnitude >= 0.1f) //jesli nastapil jakikolwiek ruch horizontal lub vertical
         {
+            //animator.Play(animWalk.name,-1); //sposob ponizej jest lepszy
+            animator.Play("Base Layer.walk", -1);
+
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y; //o jaki promieñ powinna przebiec rotacja jak gracz siê obraca
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime); //¿eby rotacja nie by³a zbyt szybka 
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f-90); //tutaj dodaje -90 bo byl problem ze animator kaczuchy j¹ przewraca³ 
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
+        }
+        else
+        {
+            animator.Play("Base Layer.idle", -1);
         }
     }
 }
