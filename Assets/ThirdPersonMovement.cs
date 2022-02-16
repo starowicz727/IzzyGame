@@ -14,25 +14,31 @@ public class ThirdPersonMovement : MonoBehaviour
     bool isGrounded;
 
     public Transform groundCheck;
-    public float groundDistance = 0.4f;
+    public float groundDistance = 0.01f; //promieñ okrêgu sprawdzaj¹cego kolizjê z pod³o¿em 
     public LayerMask groundMask;
 
     float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
 
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     void Update()
     {
         //jump
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); //tworzymy sfere tu¿ pod graczem ¿eby sprawdziæ czy koliduje z pod³o¿em
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f;
+            velocity.y = -1f;
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -1 * gravity);
         }
         //gravity
         velocity.y += gravity * Time.deltaTime;
