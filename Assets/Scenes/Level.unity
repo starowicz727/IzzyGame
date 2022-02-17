@@ -326,8 +326,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: 86.82254}
-  m_SizeDelta: {x: 254.1071, y: 47.6451}
+  m_AnchoredPosition: {x: 43, y: 165}
+  m_SizeDelta: {x: 655.8909, y: 122.9796}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &169493346
 MonoBehaviour:
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 2, y: -2}
+  m_EffectDistance: {x: 4, y: -4}
   m_UseGraphicAlpha: 1
 --- !u!114 &489451099
 MonoBehaviour:
@@ -1246,13 +1246,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 35
+    m_Font: {fileID: 12800000, guid: a6accfe729a57b045ac54485e4b4d109, type: 3}
+    m_FontSize: 120
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 50
-    m_Alignment: 4
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1326,6 +1326,7 @@ GameObject:
   - component: {fileID: 703139308}
   - component: {fileID: 703139310}
   - component: {fileID: 703139309}
+  - component: {fileID: 703139311}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -1392,6 +1393,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703139307}
   m_CullTransparentMesh: 1
+--- !u!95 &703139311
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703139307}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 812737471cced0a4292d813aa1c9e13d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &763225686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,7 +1633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 2, y: -2}
+  m_EffectDistance: {x: 4, y: -4}
   m_UseGraphicAlpha: 1
 --- !u!114 &1050962183
 MonoBehaviour:
@@ -1636,13 +1656,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 35
+    m_Font: {fileID: 12800000, guid: a6accfe729a57b045ac54485e4b4d109, type: 3}
+    m_FontSize: 120
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 50
-    m_Alignment: 4
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3599,7 +3619,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343355931}
-  m_LocalRotation: {x: 0.2633276, y: -0.087159455, z: 0.023896247, w: 0.9604639}
+  m_LocalRotation: {x: 0.26332757, y: -0.0871595, z: 0.023896264, w: 0.9604638}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3891,8 +3911,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: 19}
-  m_SizeDelta: {x: 254.1071, y: 47.6451}
+  m_AnchoredPosition: {x: 43, y: -10.06073}
+  m_SizeDelta: {x: 655.8909, y: 122.9796}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1552338507
 MonoBehaviour:
@@ -4066,7 +4086,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.26158464, y: -0.087202676, z: 0.023738084, w: 0.96094}
+  m_LocalRotation: {x: 0.2615846, y: -0.08720271, z: 0.023738096, w: 0.96094}
   m_LocalPosition: {x: 1.0477798, y: 3.7436855, z: -5.725524}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4731,7 +4751,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120443333}
-  m_LocalRotation: {x: 0.24586001, y: -0.08757861, z: 0.022311118, w: 0.96508294}
+  m_LocalRotation: {x: 0.24586003, y: -0.08757865, z: 0.022311125, w: 0.96508294}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
