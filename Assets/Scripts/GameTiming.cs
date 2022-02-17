@@ -11,12 +11,13 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
     private float minutes, seconds;
     public GameObject winMenuUI;
     public GameObject hudUI;
+    public Text winTimeTxt, winPiggyTxt;
     void Start()
     {
         gameTimer = 0f;
+        GameState.GameFinished = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!PauseMenu.GameIsPaused)
@@ -37,8 +38,9 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
             hudUI.SetActive(false);
             winMenuUI.SetActive(true);
             Time.timeScale = 0f;
+            winPiggyTxt.text = GameState.PiggyNumber.ToString();
+            winTimeTxt.text = String.Format("{0:00}", minutes) + ":" + String.Format("{0:00}", seconds);
             Cursor.visible = true;
-            Debug.Log("you win");
         }
     }
 }
