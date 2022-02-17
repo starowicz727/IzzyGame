@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject hudUI;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !GameState.GameFinished)
         {
             if (GameIsPaused) //kiedy klikamy esc ¿eby wyjœæ z pause menu
             {
@@ -44,5 +44,10 @@ public class PauseMenu : MonoBehaviour
         //Time.timeScale = 0f;
         Resume();
         SceneManager.LoadScene("MainMenu"); //mo¿e lepiej nazwy sceny nie zapisywaæ dos³ownie tylko zmienn¹?
+    }
+    public void NewGame()
+    {
+        Resume();
+        SceneManager.LoadScene("Level");
     }
 }
