@@ -16,6 +16,8 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
     {
         gameTimer = 0f;
         GameState.GameFinished = false;
+        GameState.PiggyNumber = 0;
+        GameState.LivesNumber = 3;
     }
 
     void Update()
