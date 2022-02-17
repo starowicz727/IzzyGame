@@ -42,8 +42,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         //Time.timeScale = 0f;
-        pauseMenuUI.SetActive(false);
-        hudUI.SetActive(true);
+        Resume();
         SceneManager.LoadScene("MainMenu"); //mo¿e lepiej nazwy sceny nie zapisywaæ dos³ownie tylko zmienn¹?
     }
 }
