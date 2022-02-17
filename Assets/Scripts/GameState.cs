@@ -5,5 +5,5 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
     public static int PiggyNumber = 0;
-
+    public static int LivesNumber = 3;
 }
