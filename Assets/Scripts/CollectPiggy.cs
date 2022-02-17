@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CollectPiggy : MonoBehaviour
 {
-    public int piggyCount = 0;
+    //public int piggyCount = 0;
     public Text piggyCountTxt;
     private float rotationsPerMinute = 15;
     private void Update()
@@ -17,8 +17,8 @@ public class CollectPiggy : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            piggyCount += 1;
-            piggyCountTxt.text = piggyCount.ToString();
+            GameState.PiggyNumber += 1;
+            piggyCountTxt.text = GameState.PiggyNumber.ToString() + "/23";
             Destroy(this.gameObject);
         }
     }
