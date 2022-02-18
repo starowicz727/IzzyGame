@@ -7,7 +7,9 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
 
-    public float speed = 6f;
+    public float speed = 3f;
+    public float slowerSpeed = 3f;
+    public float fasterSpeed = 6f;
     public float gravity = -9.81f;
     public float jumpHeight = 3;
     Vector3 velocity;
@@ -61,6 +63,15 @@ public class ThirdPersonMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f-90); //tutaj dodaje -90 bo byl problem ze animator kaczuchy j¹ przewraca³ 
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))//Input.GetKeyDown(KeyCode.RightShift))
+            {
+                speed = fasterSpeed;
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+            {
+                speed = slowerSpeed;
+            }
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
         else

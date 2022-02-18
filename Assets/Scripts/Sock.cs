@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Sock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    private float rotationsPerMinute = 10f;
+    public GameObject sockLock;
     void Update()
     {
-        
+        transform.Rotate(0, 6.0f * rotationsPerMinute * Time.deltaTime, 0);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Destroy(this.gameObject);
+            Destroy(sockLock);
+        }
     }
 }
