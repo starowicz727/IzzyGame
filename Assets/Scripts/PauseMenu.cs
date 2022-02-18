@@ -48,6 +48,6 @@ public class PauseMenu : MonoBehaviour
     public void NewGame()
     {
         Resume();
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("Level"); 
     }
 }

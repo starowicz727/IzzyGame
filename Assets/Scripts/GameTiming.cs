@@ -9,12 +9,13 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
     public Text timeText;
     private float gameTimer;
     private float minutes, seconds;
-    public GameObject winMenuUI;
+    public GameObject winOrLoseMenuUI;
     public GameObject hudUI;
-    public Text winTimeTxt, winPiggyTxt;
+    public Text winTimeTxt, winPiggyTxt, announcement;
     void Start()
     {
         gameTimer = 0f;
+        Time.timeScale = 1f;
         GameState.GameFinished = false;
         GameState.PiggyNumber = 0;
         GameState.LivesNumber = 3;
@@ -29,20 +30,31 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
             seconds = (int)(gameTimer % 60f);
             timeText.text = String.Format("{0:00}", minutes) + ":" + String.Format("{0:00}", seconds);
         }
+        if (GameState.LivesNumber < 1)
+        {
+            announcement.text = "you lose :(";
+            EndOfGame();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            PauseMenu.GameIsPaused = true;
-            GameState.GameFinished = true;
-            hudUI.SetActive(false);
-            winMenuUI.SetActive(true);
-            Time.timeScale = 0f;
-            winPiggyTxt.text = GameState.PiggyNumber.ToString();
-            winTimeTxt.text = String.Format("{0:00}", minutes) + ":" + String.Format("{0:00}", seconds);
-            Cursor.visible = true;
+            announcement.text = "congrats!";
+            EndOfGame();
         }
+    }
+
+    private void EndOfGame()
+    {
+        PauseMenu.GameIsPaused = true;
+        GameState.GameFinished = true;
+        hudUI.SetActive(false);
+        winOrLoseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        winPiggyTxt.text = GameState.PiggyNumber.ToString();
+        winTimeTxt.text = String.Format("{0:00}", minutes) + ":" + String.Format("{0:00}", seconds);
+        Cursor.visible = true;
     }
 }
