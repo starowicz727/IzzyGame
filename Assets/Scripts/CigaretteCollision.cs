@@ -9,18 +9,35 @@ public class CigaretteCollision : MonoBehaviour
     public GameObject HitColor;
     
 
-    private void OnCollisionEnter(Collision collision)
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if(collision.gameObject.tag == "Player")
+    //    {
+    //        HitColor.SetActive(true);
+    //        GameState.LivesNumber -= 1;
+    //        livesCountTxt.text = GameState.LivesNumber.ToString();
+    //    }
+    //}
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        HitColor.SetActive(false);
+    //    }
+    //}
+
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             HitColor.SetActive(true);
             GameState.LivesNumber -= 1;
             livesCountTxt.text = GameState.LivesNumber.ToString();
         }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             HitColor.SetActive(false);
         }
