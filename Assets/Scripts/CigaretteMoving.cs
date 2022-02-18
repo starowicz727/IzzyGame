@@ -8,14 +8,31 @@ public class CigaretteMoving : MonoBehaviour
     private float startPosition;
     private float amplitude = 2f;
     public bool goUp;
+    public bool toTheSide = false;
     void Start()
     {
-        startPosition = this.transform.position.y;
+        if (toTheSide)
+        {
+            startPosition = this.transform.position.z;
+        }
+        else
+        {
+            startPosition = this.transform.position.y;
+        }
+        
     }
 
     void Update()
     {
-        Movement();
+        if (toTheSide)
+        {
+            ToTheSideMovement();
+        }
+        else
+        {
+            Movement();
+        }
+        
     }
 
     private void Movement()
@@ -36,6 +53,32 @@ public class CigaretteMoving : MonoBehaviour
             if (this.transform.position.y >= startPosition - amplitude)
             {
                 this.transform.position = transform.position - new Vector3(0, directionSpeed * Time.deltaTime, 0);
+            }
+            else
+            {
+                goUp = true;
+            }
+        }
+    }
+
+    private void ToTheSideMovement()
+    {
+        if (goUp)
+        {
+            if (this.transform.position.z <= startPosition + amplitude)
+            {
+                this.transform.position = transform.position + new Vector3(0, 0, directionSpeed * Time.deltaTime);
+            }
+            else
+            {
+                goUp = false;
+            }
+        }
+        else
+        {
+            if (this.transform.position.z >= startPosition - amplitude)
+            {
+                this.transform.position = transform.position - new Vector3(0, 0, directionSpeed * Time.deltaTime);
             }
             else
             {

@@ -16,7 +16,7 @@ public class ThirdPersonMovement : MonoBehaviour
     bool isGrounded;
 
     public Transform groundCheck;
-    public float groundDistance = 0.01f; //promieñ okrêgu sprawdzaj¹cego kolizjê z pod³o¿em 
+    public float groundDistance = 0.09f; //promieñ okrêgu sprawdzaj¹cego kolizjê z pod³o¿em 
     public LayerMask groundMask;
 
     float turnSmoothVelocity;
