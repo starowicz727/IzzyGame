@@ -33,6 +33,7 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
         if (GameState.LivesNumber < 1)
         {
             announcement.text = "you lose :(";
+            FindObjectOfType<AudioManager>().Play("youLose");
             EndOfGame();
         }
     }
@@ -42,6 +43,7 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
         if (other.tag == "Player")
         {
             announcement.text = "congrats!";
+            FindObjectOfType<AudioManager>().Play("youWin");
             EndOfGame();
         }
     }

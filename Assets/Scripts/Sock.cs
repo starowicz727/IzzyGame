@@ -14,6 +14,7 @@ public class Sock : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().Play("sock");
             Destroy(this.gameObject);
             Destroy(sockLock);
         }

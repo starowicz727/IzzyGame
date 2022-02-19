@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.Audio;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -27,6 +28,7 @@ public class AudioManager : MonoBehaviour
             snd.source.pitch = snd.pitch;
         }
     }
+    
 
     public void Play(string name)
     {

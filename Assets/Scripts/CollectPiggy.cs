@@ -17,6 +17,7 @@ public class CollectPiggy : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().Play("collectPiggy");
             GameState.PiggyNumber += 1;
             piggyCountTxt.text = GameState.PiggyNumber.ToString() + "/23";
             Destroy(this.gameObject);

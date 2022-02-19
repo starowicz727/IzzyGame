@@ -23,6 +23,7 @@ public class CollectLives : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().Play("eat");
             GameState.LivesNumber += 1;
             livesCountTxt.text = GameState.LivesNumber.ToString();
             Destroy(this.gameObject);

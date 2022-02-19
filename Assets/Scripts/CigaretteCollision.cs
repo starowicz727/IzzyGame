@@ -30,6 +30,7 @@ public class CigaretteCollision : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().Play("pain");
             HitColor.SetActive(true);
             GameState.LivesNumber -= 1;
             livesCountTxt.text = GameState.LivesNumber.ToString();
