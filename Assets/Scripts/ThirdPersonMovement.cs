@@ -32,6 +32,15 @@ public class ThirdPersonMovement : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))//Input.GetKeyDown(KeyCode.RightShift))
+        {
+            speed = fasterSpeed;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        {
+            speed = slowerSpeed;
+        }
+
         //jump
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); //tworzymy sfere tu¿ pod graczem ¿eby sprawdziæ czy koliduje z pod³o¿em
 
@@ -64,14 +73,6 @@ public class ThirdPersonMovement : MonoBehaviour
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))//Input.GetKeyDown(KeyCode.RightShift))
-            {
-                speed = fasterSpeed;
-            }
-            else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
-            {
-                speed = slowerSpeed;
-            }
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
         else
