@@ -79,4 +79,9 @@ public class RadioManager : MonoBehaviour
             this.gameObject.GetComponent<AudioSource>().Play();
         }
     }
+
+    public void SetVolume(float newVolume)
+    {
+        this.gameObject.GetComponent<AudioSource>().volume = newVolume;
+    }
 }

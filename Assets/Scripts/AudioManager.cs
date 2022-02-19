@@ -45,4 +45,11 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+    public void SetVolume(float newVolume)
+    {
+        foreach (Sound snd in sounds)
+        {
+            snd.source.volume = newVolume;
+        }
+    }
 }
