@@ -59,4 +59,9 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
         winTimeTxt.text = String.Format("{0:00}", minutes) + ":" + String.Format("{0:00}", seconds);
         Cursor.visible = true;
     }
+
+    private void CheckRank(float time, int piggies)
+    {
+
+    }
 }
