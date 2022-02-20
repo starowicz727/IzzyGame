@@ -8198,7 +8198,6 @@ GameObject:
   - component: {fileID: 1638335140}
   - component: {fileID: 1638335143}
   - component: {fileID: 1638335142}
-  - component: {fileID: 1638335141}
   - component: {fileID: 1638335144}
   m_Layer: 5
   m_Name: duck1
@@ -8226,19 +8225,6 @@ RectTransform:
   m_AnchoredPosition: {x: -752.3245, y: -73.819214}
   m_SizeDelta: {x: 274.39, y: 274.3892}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1638335141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638335139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 738daa98dd07b0c4dad979a4f41ce0f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationsPerMinute: 20
 --- !u!114 &1638335142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9920,7 +9906,6 @@ GameObject:
   - component: {fileID: 1897680056}
   - component: {fileID: 1897680059}
   - component: {fileID: 1897680058}
-  - component: {fileID: 1897680057}
   - component: {fileID: 1897680060}
   m_Layer: 5
   m_Name: duck
@@ -9948,19 +9933,6 @@ RectTransform:
   m_AnchoredPosition: {x: 560.67554, y: -75.819214}
   m_SizeDelta: {x: 274.39, y: 274.3892}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1897680057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897680055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 738daa98dd07b0c4dad979a4f41ce0f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationsPerMinute: 20
 --- !u!114 &1897680058
 MonoBehaviour:
   m_ObjectHideFlags: 0

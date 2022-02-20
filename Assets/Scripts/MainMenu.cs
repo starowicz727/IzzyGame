@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     void Start()
     {
+        //GameState.ClearAllGameState();
+        GameState.LoadMyGameState();
         Cursor.visible = true;
     }
     public void StartPlaying()

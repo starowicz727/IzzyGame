@@ -13,6 +13,9 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
     public GameObject hudUI;
     public Text winTimeTxt, winPiggyTxt, announcement;
     public InputField nameField;
+    public Button playAgainBtn, mainMenuBtn;
+    bool saveCurrentPlayer = false;
+
     void Start()
     {
         gameTimer = 0f;
@@ -40,14 +43,14 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) 
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player") //gry gracz dobiegnie do mety
         {
             announcement.text = "congrats!";
             FindObjectOfType<AudioManager>().Play("youWin");
 
-            nameField.gameObject.SetActive(true);
+            CheckRank(gameTimer, GameState.PiggyNumber); //sprawdzamy czy zdobyte punkty s¹ lepsze niz obecnie w TOP7
             EndOfGame();
            
         }
@@ -67,6 +70,47 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
 
     private void CheckRank(float time, int piggies)
     {
+        if(GameState.ListOfBestPlayers[6].CompareTo(new Player("", piggies, time))<0) //jesli gracz7 z listy jest lepszy niz obecny gracz to nie wpisujemy w liste
+        {
+            nameField.gameObject.SetActive(false);
+            playAgainBtn.gameObject.SetActive(true);
+            mainMenuBtn.gameObject.SetActive(true);
+        }
+        else
+        {
+            saveCurrentPlayer = true;
+            nameField.gameObject.SetActive(true);
+            playAgainBtn.gameObject.SetActive(false);
+            mainMenuBtn.gameObject.SetActive(false);
+        }
+    }
 
+    public void SetName(String newName)
+    {
+        if (newName.Length > 0)
+        {
+            playAgainBtn.gameObject.SetActive(true);
+            mainMenuBtn.gameObject.SetActive(true);
+        }
+        else
+        {
+            playAgainBtn.gameObject.SetActive(false);
+            mainMenuBtn.gameObject.SetActive(false);
+        }
+    }
+    public void ClickToSaveRank()
+    {
+        if (saveCurrentPlayer)
+        {
+            Player playerToSave = new Player(nameField.text, GameState.PiggyNumber, gameTimer);
+            GameState.ListOfBestPlayers.Add(playerToSave);
+            GameState.ListOfBestPlayers.Sort();
+            GameState.ListOfBestPlayers.Remove(GameState.ListOfBestPlayers[7]);
+            GameState.SaveMyGameState();
+        }
+        //else
+        //{
+
+        //}
     }
 }
