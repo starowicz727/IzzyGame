@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3400155221167041120
+--- !u!1 &8815183869716639254
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3400155221167041123}
-  - component: {fileID: 3018888569408880626}
+  - component: {fileID: 8815183869716639253}
+  - component: {fileID: 8979943487960333188}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3400155221167041123
+--- !u!4 &8815183869716639253
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3400155221167041120}
+  m_GameObject: {fileID: 8815183869716639254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -88.908775, y: -54.872147, z: 147.37402}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,13 +31,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3018888569408880626
+--- !u!114 &8979943487960333188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3400155221167041120}
+  m_GameObject: {fileID: 8815183869716639254}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748b99097ad0c5244aa35cad00e1cc17, type: 3}
@@ -50,27 +50,27 @@ MonoBehaviour:
     volume: 1
     pitch: 1
   - name: pain
-    clip: {fileID: 8300000, guid: bdd45afb659e3ed4fbd8c5718feec26a, type: 3}
+    clip: {fileID: 8300000, guid: cd70832ad6faa5049b434a7c65680128, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
   - name: collectPiggy
-    clip: {fileID: 8300000, guid: bdd45afb659e3ed4fbd8c5718feec26a, type: 3}
+    clip: {fileID: 8300000, guid: a3c830ed545799e49b7d5330b131ae90, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
   - name: eat
-    clip: {fileID: 8300000, guid: bdd45afb659e3ed4fbd8c5718feec26a, type: 3}
+    clip: {fileID: 8300000, guid: 411785db75449e84a85ff6ff81cc6d4b, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
   - name: youWin
-    clip: {fileID: 8300000, guid: bdd45afb659e3ed4fbd8c5718feec26a, type: 3}
+    clip: {fileID: 8300000, guid: 6082e44bfb263b14bb9fa1e1e832d692, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
   - name: youLose
-    clip: {fileID: 8300000, guid: bdd45afb659e3ed4fbd8c5718feec26a, type: 3}
+    clip: {fileID: 8300000, guid: 6aff0e0cc5445134cbcf8fc968150689, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
