@@ -2492,8 +2492,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51.99951, y: 220}
-  m_SizeDelta: {x: 1551.103, y: 307.2509}
+  m_AnchoredPosition: {x: 21.064087, y: 233}
+  m_SizeDelta: {x: 1612.9739, y: 307.2509}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &519524300
 MonoBehaviour:
@@ -2544,8 +2544,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "collect as many pigs as possible and get to the finish line\r.\nwatch
-    out for obstacles\r and if you get injured-eat some noodle\r.\nfind a sock to
-    be able to walk on the grass\r."
+    out for cigarettes, they can kill you\r!\nif you get injured-eat some noodle\r.\nfind
+    the holy sock which will give you the ability to walk on the grass\r."
 --- !u!222 &519524302
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3617,7 +3617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52, y: 443}
+  m_AnchoredPosition: {x: 52, y: 437}
   m_SizeDelta: {x: 1551.103, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &695330305
@@ -7709,7 +7709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52, y: -390}
+  m_AnchoredPosition: {x: 52, y: -365}
   m_SizeDelta: {x: 1551.103, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1478295975
