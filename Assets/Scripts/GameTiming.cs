@@ -12,6 +12,7 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
     public GameObject winOrLoseMenuUI;
     public GameObject hudUI;
     public Text winTimeTxt, winPiggyTxt, announcement;
+    public InputField nameField;
     void Start()
     {
         gameTimer = 0f;
@@ -35,6 +36,7 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
             announcement.text = "you lose :(";
             FindObjectOfType<AudioManager>().Play("youLose");
             EndOfGame();
+            GameState.LivesNumber = 3;
         }
     }
 
@@ -44,7 +46,10 @@ public class GameTiming : MonoBehaviour //skrypt przypisany do flagi, sprawdza c
         {
             announcement.text = "congrats!";
             FindObjectOfType<AudioManager>().Play("youWin");
+
+            nameField.gameObject.SetActive(true);
             EndOfGame();
+           
         }
     }
 
