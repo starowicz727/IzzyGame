@@ -22,17 +22,6 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(Cursor.visible == false)
-            {
-                Cursor.visible = true;
-            }
-            else
-            {
-                Cursor.visible = false;
-            }
-        }
     }
 
     public void Resume()
