@@ -14,13 +14,20 @@ public class WriteRank : MonoBehaviour //skrypt przypisany do RankMenu
     public Text player6Name, player6Pig, player6Time;
     public Text player7Name, player7Pig, player7Time;
 
+    public InputField passwordField;
+
     private int minutes, seconds;
     private float gameTimer;
     void Start()
     {
+        WriteRanking();
+    }
+
+    public void WriteRanking()
+    {
         player1Name.text = GameState.ListOfBestPlayers[0].Name; player1Pig.text = GameState.ListOfBestPlayers[0].PiggiesNumber.ToString();
         gameTimer = GameState.ListOfBestPlayers[0].Time;
-        if(gameTimer < 356400) //jesli to jest faktycznie wynik gracza a nie wpisany poczatkowy jakis
+        if (gameTimer < 356400) //jesli to jest faktycznie wynik gracza a nie wpisany poczatkowy jakis
         {
             minutes = (int)(gameTimer / 60f);
             seconds = (int)(gameTimer % 60f);
@@ -30,7 +37,7 @@ public class WriteRank : MonoBehaviour //skrypt przypisany do RankMenu
         {
             player1Time.text = "xx:xx:xx";
         }
-        
+
         player2Name.text = GameState.ListOfBestPlayers[1].Name; player2Pig.text = GameState.ListOfBestPlayers[1].PiggiesNumber.ToString();
         gameTimer = GameState.ListOfBestPlayers[1].Time;
         if (gameTimer < 356400) //jesli to jest faktycznie wynik gracza a nie wpisany poczatkowy jakis
@@ -109,5 +116,12 @@ public class WriteRank : MonoBehaviour //skrypt przypisany do RankMenu
             player7Time.text = "xx:xx:xx";
         }
     }
-
+    public void SubmitPasswordClicked()
+    {
+        if (passwordField.text == "dotknijtwarzymejpalcamirak314")
+        {
+            GameState.ClearAllGameState();
+            WriteRanking();
+        }
+    }
 }
