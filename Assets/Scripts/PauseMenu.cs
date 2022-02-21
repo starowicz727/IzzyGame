@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject hudUI;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !GameState.GameFinished)
+        if (Input.GetKeyDown(KeyCode.M) && !GameState.GameFinished)
         {
             if (GameIsPaused) //kiedy klikamy esc ¿eby wyjœæ z pause menu
             {
@@ -19,6 +19,18 @@ public class PauseMenu : MonoBehaviour
             else // kiedy klikamy esc ¿eby wyjœæ z gry
             {
                 Pause();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(Cursor.visible == false)
+            {
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.visible = false;
             }
         }
     }
