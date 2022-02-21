@@ -60,8 +60,9 @@ public static class DataSave //klasa statyczna ¿eby nie utworzyæ ró¿nych instanc
         {
             //Debug.LogError("File not found in " + path);
             Debug.Log("File not found");
-            SaveGameState(new List<Player> { new Player(), new Player(), new Player(), new Player(), new Player(), new Player(), new Player() });
-            return null;
+            List<Player> listToAdd = new List<Player> { new Player(), new Player(), new Player(), new Player(), new Player(), new Player(), new Player() };
+            SaveGameState(listToAdd);
+            return listToAdd;
         }
     }
 }
