@@ -28,9 +28,15 @@ public class AudioManager : MonoBehaviour
             snd.source.pitch = snd.pitch;
         }
     }
-    
+    void Update()
+    {
+        foreach (Sound snd in sounds)
+        {
+            snd.source.volume = GameState.SoundVolume;
+        }
+    }
 
-    public void Play(string name)
+        public void Play(string name)
     {
         Sound fsnd = Array.Find(sounds, sound => sound.name == name); //szukamy w tablicy Sound o nazwie name
 
@@ -45,11 +51,11 @@ public class AudioManager : MonoBehaviour
         }
 
     }
-    public void SetVolume(float newVolume)
-    {
-        foreach (Sound snd in sounds)
-        {
-            snd.source.volume = newVolume;
-        }
-    }
+    //public void SetVolume(float newVolume)
+    //{
+    //    foreach (Sound snd in sounds)
+    //    {
+    //        snd.source.volume = newVolume;
+    //    }
+    //}
 }

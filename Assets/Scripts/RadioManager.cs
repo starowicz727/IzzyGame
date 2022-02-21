@@ -21,6 +21,7 @@ public class RadioManager : MonoBehaviour
     }
     void Start() 
     {
+        this.gameObject.GetComponent<AudioSource>().volume = GameState.MusicVolume;
         this.gameObject.GetComponent<AudioSource>().clip = songs[0];
         this.gameObject.GetComponent<AudioSource>().Play();
     }
@@ -28,6 +29,7 @@ public class RadioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.gameObject.GetComponent<AudioSource>().volume = GameState.MusicVolume;
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             this.gameObject.GetComponent<AudioSource>().clip = songs[0];
@@ -80,8 +82,9 @@ public class RadioManager : MonoBehaviour
         }
     }
 
-    public void SetVolume(float newVolume)
-    {
-        this.gameObject.GetComponent<AudioSource>().volume = newVolume;
-    }
+    //public void SetVolume(float newVolume)
+    //{
+    //    GameState.MusicVolume = newVolume;
+    //    this.gameObject.GetComponent<AudioSource>().volume = newVolume;
+    //}
 }
